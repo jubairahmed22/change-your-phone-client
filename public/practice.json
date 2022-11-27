@@ -1,0 +1,44 @@
+[
+    {
+        "service_id": "01",
+        "brand": "apple",
+        "title": "I phone x",
+        "img": "https://photographylife.com/wp-content/uploads/2019/08/iPhone-X.jpg",
+        "price": "30000"
+    },
+    {
+        "service_id": "01",
+        "brand": "apple",
+        "title": "I phone 13pro",
+        "img": "https://www.mobiledokan.com/wp-content/uploads/2021/10/Apple-iPhone-13-Pro-Max-image.jpg",
+        "price": "20.00"
+    },
+    {
+        "service_id": "02",
+        "brand": "samsung",
+        "title": "Samsung a53",
+        "img": "https://mygalaxy.fdl.com.bd/assets/img/a53/main.png",
+        "price": "20.00"
+    },
+    {
+        "service_id": "02",
+        "brand": "samsung",
+        "title": "Samsung a22",
+        "img": "https://i0.wp.com/www.mobilebd.co/wp-content/uploads/2020/10/Samsung-Galaxy-S20-Official-image-300x300.jpg",
+        "price": "20.00"
+    },
+    {
+        "service_id": "03",
+        "brand": "oneplus",
+        "title": "OnePlus Nord-53",
+        "img": "https://microless.com/cdn/products/ce53d9ff2c1e4ba4bd429a890d8609aa-md.jpg",
+        "price": "20.00"
+    },
+    {
+        "service_id": "03",
+        "brand": "oneplus",
+        "title": "OnePlus A2",
+        "img": "https://i0.wp.com/www.mobilebd.co/wp-content/uploads/2021/07/OnePlus-Nord2-5G-Official-Image-1-1-300x300.png",
+        "price": "20.00"
+    }
+]

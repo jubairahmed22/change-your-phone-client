@@ -1,0 +1,22 @@
+[
+    {
+        "service_id": "01",
+        "brand": "apple",
+        "title": "Apple",
+        "img": "https://beebom.com/wp-content/uploads/2021/08/How-to-Type-Apple-Logo-on-iPhone-iPad-and-Mac-1-e1629868886428.jpg?w=750&quality=75",
+        "price": "20.00"
+    },
+    {
+        "service_id": "02",
+        "brand": "samsung",
+        "title": "Samsung",
+        "img": "https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_3.png?$512_N_PNG$",
+        "price": "20.00"
+    },
+    {
+        "service_id": "03",
+        "brand": "oneplus",
+        "img": "https://www.exchange4media.com/news-photo/103383-oneplus.jpg",
+        "price": "20.00"
+    }
+]
