@@ -56,7 +56,7 @@ const AllSellers = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>imag</th>
+                            <th>image</th>
                             <th>Email</th>
 
                             <th>Delete</th>
