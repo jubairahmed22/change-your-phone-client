@@ -57,7 +57,7 @@ const MyOrders = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Nam</th>
+                            <th>Name</th>
                             <th>Model</th>
                             <th>Location</th>
                             <th>Price</th>
