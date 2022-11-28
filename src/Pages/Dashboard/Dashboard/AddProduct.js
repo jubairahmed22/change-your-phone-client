@@ -93,7 +93,7 @@ const AddProduct = () => {
     return (
 
         <div className='w-96 p-7'>
-            <h2>My Product</h2>
+            <h2 className='text-2xl'>Add Product</h2>
             <form onSubmit={handleSubmit(handleAddProduct)}>
 
 
