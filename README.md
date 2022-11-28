@@ -1,4 +1,4 @@
-Used Technologies: HTML, CSS, ReactJS, RestAPI, NodeJS MongoDB, Firebase, Tailwind 
+Used Technologies: HTML, CSS, ReactJS, NodeJS MongoDB, Firebase, Tailwind 
 
 1. this is a full stack web site
 2. navbar and banner added
@@ -9,5 +9,9 @@ Used Technologies: HTML, CSS, ReactJS, RestAPI, NodeJS MongoDB, Firebase, Tailwi
 7. my orders, add a products, sells product, 
 8. there have all users are shown and admin make by users
 9. create a payment calculations
+
+Admin email: zabir@gmail.com
+pass: ZABIR@123
+
 
 clint site: https://change-your-phone-107f3.web.app/
