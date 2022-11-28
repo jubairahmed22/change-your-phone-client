@@ -10,7 +10,7 @@ const CetagoriesCard = ({ cetagories }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{title}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+
                 <div className="card-actions">
                     <Link to={`/service/${brand}`}>Click here</Link>
                 </div>

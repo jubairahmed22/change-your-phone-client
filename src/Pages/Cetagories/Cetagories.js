@@ -11,7 +11,7 @@ const Cetagories = () => {
     const { data: cetagory = [], isLoading } = useQuery({
         queryKey: ['cetagory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/cetagory');
+            const res = await fetch('https://change-your-phone-server.vercel.app/cetagory');
             const data = await res.json();
             return data
         }

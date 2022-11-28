@@ -15,7 +15,7 @@ const MyProducts = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/sellers?email=${user?.email}`;
+    const url = `https://change-your-phone-server.vercel.app/sellers?email=${user?.email}`;
 
     const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -30,7 +30,7 @@ const MyProducts = () => {
         }
     });
     const handleDeleteDoctor = doctor => {
-        fetch(`http://localhost:5000/sellers/${doctor._id}`, {
+        fetch(`https://change-your-phone-server.vercel.app/sellers/${doctor._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -14,14 +14,14 @@ const AllBuyers = () => {
     const { data: cetagory = [], isLoading, refetch } = useQuery({
         queryKey: ['cetagory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allbuyers');
+            const res = await fetch('https://change-your-phone-server.vercel.app/allbuyers');
             const data = await res.json();
             return data
         }
     })
     const handleDeleteBuyers = doctor => {
         console.log(doctor);
-        fetch(`http://localhost:5000/allbuy/${doctor._id}`, {
+        fetch(`https://change-your-phone-server.vercel.app/allbuy/${doctor._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ const AllBuyers = () => {
     return (
         <div>
             <div>
-                <h2>This is All sellers{cetagory.length}</h2>
+
                 <h3 className='text-3xl mb-5'>All Sellers</h3>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -53,7 +53,7 @@ const AllBuyers = () => {
                                 <th></th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Admin</th>
+
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -66,7 +66,7 @@ const AllBuyers = () => {
                                     <th>{i + 1}</th>
                                     <td>{allusers.name}</td>
                                     <td>{allusers.email}</td>
-                                    <td>dd</td>
+
                                     <label
                                         onClick={() => setDeletingBuyer(allusers)}
                                         htmlFor="buyer-modal" className="btn btn-primary">Delete</label>

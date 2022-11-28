@@ -8,11 +8,13 @@ import CetagoriesDeatails from "../../Pages/CetagoriesDetails/CetagoriesDeatails
 import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import AddProduct from "../../Pages/Dashboard/Dashboard/AddProduct";
+import Payment from "../../Pages/Dashboard/Dashboard/Payment/Payment";
 
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Home from "../../Pages/Home/Home/Home"
 import Login from "../../Pages/Login/Login";
+import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/service/:brand',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/service/${params.brand}`)
+                    return fetch(`https://change-your-phone-server.vercel.app/service/${params.brand}`)
                 },
                 element: <CetagoriesDeatails></CetagoriesDeatails>
             },
@@ -45,12 +48,16 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
+            {
+                path: '*', element: <div className="text-center text-5xl ">This route is not founded</div>
+            }
         ]
 
     },
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard',
@@ -75,6 +82,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/buyers',
                 element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://change-your-phone-server.vercel.app/allbuyers/${params.id}`)
+            },
+            {
+                path: '*', element: <div className="text-center text-5xl ">This route is not founded</div>
             }
         ]
     }

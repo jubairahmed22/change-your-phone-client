@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BuyModal = ({ treatement, setTreatment }) => {
-    const { title } = treatement;
+    const { title, price } = treatement;
     const { user } = useContext(AuthContext)
 
 
@@ -12,6 +12,7 @@ const BuyModal = ({ treatement, setTreatment }) => {
         const form = event.target;
         const title = form.title.value;
         const name = form.name.value;
+        const price = form.price.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const address = form.address.value;
@@ -24,9 +25,11 @@ const BuyModal = ({ treatement, setTreatment }) => {
             email: email,
             phone: phone,
             address: address,
-            review: review
+            review: review,
+            price: price
         }
-        fetch('http://localhost:5000/bookings', {
+        console.log(booking);
+        fetch('https://change-your-phone-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,10 +53,12 @@ const BuyModal = ({ treatement, setTreatment }) => {
             <div className="modal">
                 <div className="modal-box relative">
                     <label htmlFor="booking-modal" className="btn btn-primary btn-sm btn-circle absolute right-2 top-2 ">✕</label>
+
                     <h3 className="text-lg font-bold">{title}</h3>
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-8'>
 
                         <input name='title' type="title" defaultValue={title} disabled className="input w-full input-bordered" />
+                        <input name='price' type="price" defaultValue={price} disabled className="input w-full input-bordered" />
                         <input name='phone' type="phone" placeholder="Phone Number" className="input w-full input-bordered" />
                         <input name='address' type="address" placeholder="Locations" className="input w-full input-bordered" />
                         <input name='review' type="review" placeholder="Review" className="input w-full input-bordered" />

@@ -4,7 +4,7 @@ import bannerimg from '../../../images/bannerImgOne.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero rounded-lg bg-info  bg-base-200">
+        <div className="hero rounded-lg bg-info  mt-10">
             <div className="hero-content flex-col lg:flex-row">
                 <img src={bannerimg} className="rounded-lg w-1/2 shadow-2xl" alt='' />
                 <div>

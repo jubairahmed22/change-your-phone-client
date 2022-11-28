@@ -17,7 +17,7 @@ const AddProduct = () => {
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialty'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/chooseCategory');
+            const res = await fetch('https://change-your-phone-server.vercel.app/chooseCategory');
             const data = await res.json();
             return data;
         }
@@ -49,7 +49,7 @@ const AddProduct = () => {
                     }
                     console.log(seller);
 
-                    fetch('http://localhost:5000/service', {
+                    fetch('https://change-your-phone-server.vercel.app/service', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -64,7 +64,7 @@ const AddProduct = () => {
 
                         })
 
-                    fetch('http://localhost:5000/sellerscategory', {
+                    fetch('https://change-your-phone-server.vercel.app/sellerscategory', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

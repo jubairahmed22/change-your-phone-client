@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import Loader from '../../Loader/Loader';
 import MyOrdersModal from '../../Shared/MyOrdersModal/MyOrdersModal';
@@ -14,7 +15,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://change-your-phone-server.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -29,7 +30,7 @@ const MyOrders = () => {
         }
     })
     const handleDeleteOrder = doctor => {
-        fetch(`http://localhost:5000/orders/${doctor._id}`, {
+        fetch(`https://change-your-phone-server.vercel.app/orders/${doctor._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -49,7 +50,7 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl mb-5'>My Orders</h3>
+            <h3 className='text-3xl mt-5 mb-5'>My Orders</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -59,6 +60,8 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Model</th>
                             <th>Location</th>
+                            <th>Price</th>
+                            <th>Payment</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -72,6 +75,15 @@ const MyOrders = () => {
                                 <td>{bookings.name}</td>
                                 <td>{bookings.title}</td>
                                 <td>{bookings.address}</td>
+                                <td>{bookings.price}</td>
+                                <td>
+                                    {
+                                        bookings.price && !bookings.paid && <Link to={`/dashboard/payment/${bookings._id}`}><button className='btn btn-primary'>Payment</button></Link>
+                                    }
+                                    {
+                                        bookings.price && bookings.paid && <span className='text-primary'>Paid</span>
+                                    }
+                                </td>
                                 <td><label
                                     onClick={() => setDeletingOrder(bookings)}
                                     htmlFor="order-modal" className="btn btn-info">Delete</label></td>
