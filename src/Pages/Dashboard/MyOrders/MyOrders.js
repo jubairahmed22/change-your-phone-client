@@ -62,7 +62,7 @@ const MyOrders = () => {
                             <th>Location</th>
                             <th>Price</th>
                             <th>Payment</th>
-                            <th>Delet</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
